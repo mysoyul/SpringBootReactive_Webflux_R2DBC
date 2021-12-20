@@ -7,8 +7,10 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
 import myspringboot.reactive.r2dbc.dto.Customer;
 import myspringboot.reactive.r2dbc.handler.CustomerHandler;
+
 import org.springdoc.core.annotations.RouterOperation;
 import org.springdoc.core.annotations.RouterOperations;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,9 +37,9 @@ public class CustomerRouteConfig {
                             },
                             method = RequestMethod.GET,
                             beanClass = CustomerHandler.class,
-                            beanMethod = "loadCustomerStream",
+                            beanMethod = "loadCustomersStream",
                             operation = @Operation(
-                                    operationId = "loadCustomerStream",
+                                    operationId = "loadCustomersStream",
                                     responses = {
                                             @ApiResponse(
                                                     responseCode = "200",
