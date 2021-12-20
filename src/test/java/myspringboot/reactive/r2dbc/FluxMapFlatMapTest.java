@@ -67,6 +67,20 @@ public class FluxMapFlatMapTest {
                 "Isabella",
                 "Mia",
                 "Evelyn");
+
+        Flux<Integer> range = Flux.range(1, Integer.MAX_VALUE);
+
+        //1개의 글자로 쪼개서, sort, distinct, line번호와 낱글자 출력
+        Flux.fromIterable(stringList)
+                //word.split("")의 리턴타입 Array String[]
+                .flatMap(word -> Flux.fromArray(word.split("")))
+                .sort()
+                .distinct()
+                .zipWith(range, (word,line) -> line + "=" + word)
+                .subscribe(System.out::println);
+
+
+
     }
 
 }
