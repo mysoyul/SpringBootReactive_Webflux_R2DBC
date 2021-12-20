@@ -57,6 +57,21 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- springdoc openapi webflux -->
+		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-webflux-core -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-webflux-core</artifactId>
+			<version>1.5.13</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-webflux-ui -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-webflux-ui</artifactId>
+			<version>1.5.13</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
