@@ -22,5 +22,14 @@ public class CustomerHandler {
                 .body(customerFlux, Customer.class);
 
     }
+
+    public Mono<ServerResponse> findCustomer(ServerRequest serverRequest){
+        int customerId = Integer.valueOf(serverRequest.pathVariable("id"));
+        Mono<Customer> customerMono = dao.getCustomersStreamNoDealy()
+                .filter(customer -> customer.getId() == customerId)
+                .next();
+        return ServerResponse.ok().body(customerMono, Customer.class);
+
+    }
 }
 
